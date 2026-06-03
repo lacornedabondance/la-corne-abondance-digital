@@ -1,0 +1,499 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================================
+   VARIABLES ET CONFIGURATION DE BASE
+   ========================================= */
+:root {
+  --bg-color: #f6f1e3; /* Couleur parchemin clair */
+  --text-main: #2c2c2c;
+  --text-muted: #666;
+  --burgundy: #5e1c24; /* Rouge bordeaux */
+  --gold: #c2a165;     /* Doré */
+  
+  --font-display: 'UnifrakturCook', cursive; /* Police gothique */
+  --font-serif: 'Cormorant Garamond', serif; /* Police de lecture */
+  --font-cinzel: 'Cinzel', serif;            /* Police épique (boutons/titres) */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-serif);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* =========================================
+   TYPOGRAPHIE & COULEURS
+   ========================================= */
+.display {
+  font-family: var(--font-display);
+  line-height: 1.1;
+  color: var(--burgundy);
+  margin-bottom: 1rem;
+}
+
+h1.display { font-size: 4rem; }
+h2.display { font-size: 3rem; }
+
+.gold-text { color: var(--gold); }
+.burgundy { color: var(--burgundy); }
+
+.eyebrow {
+  font-family: var(--font-cinzel);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.lede {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.drop-cap:first-letter {
+  float: left;
+  font-size: 4rem;
+  line-height: 0.8;
+  padding-right: 0.5rem;
+  font-family: var(--font-display);
+  color: var(--burgundy);
+}
+
+.flourish {
+  width: 150px;
+  height: 20px;
+  color: var(--gold);
+  margin: 0 auto 2rem auto;
+  display: block;
+}
+.flourish.dark { color: var(--burgundy); }
+
+/* =========================================
+   EN-TÊTE ET NAVIGATION (HEADER)
+   ========================================= */
+.banner {
+  background-color: var(--burgundy);
+  color: var(--gold);
+  text-align: center;
+  padding: 0.5rem;
+  font-family: var(--font-cinzel);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.header {
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--burgundy);
+}
+
+.brand-icon { width: 80px; height: 80px; }
+.brand-name { font-family: var(--font-display); font-size: 1.5rem; }
+.brand-sub { 
+  font-family: var(--font-cinzel); 
+  font-size: 0.7rem; 
+  letter-spacing: 2px; 
+  text-transform: uppercase; 
+  color: var(--text-muted); 
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-family: var(--font-cinzel);
+  font-size: 0.9rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--text-main);
+  transition: color 0.3s;
+}
+
+.nav a:hover { color: var(--burgundy); }
+
+/* =========================================
+   BOUTONS
+   ========================================= */
+.btn-primary {
+  background-color: var(--burgundy);
+  color: #fff;
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  font-family: var(--font-cinzel);
+  border: 1px solid var(--burgundy);
+  transition: all 0.3s;
+  display: inline-block;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--burgundy);
+}
+
+.btn-link {
+  background-color: transparent;
+  color: var(--text-main);
+  text-decoration: none;
+  font-family: var(--font-cinzel);
+  border-bottom: 1px solid var(--text-main);
+  padding-bottom: 0.2rem;
+  transition: all 0.3s;
+  display: inline-block;
+}
+.btn-link:hover {
+  color: var(--burgundy);
+  border-color: var(--burgundy);
+}
+
+/* =========================================
+   SECTION HÉRO (HAUT DE PAGE)
+   ========================================= */
+.hero { padding: 4rem 0; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.cta-row { display: flex; gap: 2rem; align-items: center; }
+
+.hero-img-wrap { position: relative; padding: 2rem; }
+.hero-img { width: 100%; height: auto; border: 1px solid var(--gold); display: block; }
+.corner { position: absolute; width: 40px; height: 40px; color: var(--gold); }
+.c-tl { top: 0; left: 0; }
+.c-tr { top: 0; right: 0; transform: rotate(90deg); }
+.c-br { bottom: 0; right: 0; transform: rotate(180deg); }
+.c-bl { bottom: 0; left: 0; transform: rotate(270deg); }
+
+/* =========================================
+   SECTIONS GÉNÉRALES ET SAVOIR-FAIRE
+   ========================================= */
+.section { padding: 5rem 0; }
+.section-head { text-align: center; margin-bottom: 4rem; }
+.center { text-align: center; }
+
+.manifesto {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--burgundy);
+  color: #fff;
+}
+.manifesto-inner { max-width: 800px; margin: 0 auto; }
+.manifesto .display { color: var(--gold); }
+.quote { font-size: 1.5rem; font-style: italic; margin-bottom: 2rem; line-height: 1.8; }
+.signature { font-family: var(--font-cinzel); color: var(--gold); }
+
+.savoir {
+  padding: 5rem 0;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  background-color: #fffaf0;
+}
+.savoir-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+}
+.savoir-text p { font-size: 1.2rem; margin-bottom: 1.5rem; }
+
+/* Visite / Contact */
+.visit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.visit-card {
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 2rem;
+  text-align: center;
+  background: #fff;
+}
+
+/* =========================================
+   GRILLE DES PRODUITS ET BOUTIQUE
+   ========================================= */
+#products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Force 3 colonnes */
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.product-card {
+  border: 1px solid rgba(194, 161, 101, 0.4);
+  padding: 1.5rem;
+  text-align: center;
+  background: #fffaf0;
+  border-radius: 4px;
+  /* Rend toutes les cartes identiques avec alignement parfait au fond */
+  display: flex;
+  flex-direction: column;
+}
+
+.product-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.product-title {
+  font-family: var(--font-cinzel);
+  color: var(--burgundy);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.product-desc {
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.product-price {
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: var(--gold);
+  /* Pousse le prix et le bouton vers le bas pour aligner les cartes */
+  margin-top: auto; 
+  margin-bottom: 1.2rem;
+}
+
+.btn-add-cart {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--burgundy);
+  padding: 0.6rem 1rem;
+  font-family: var(--font-cinzel);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+.btn-add-cart:hover {
+  background: var(--burgundy);
+  color: #fff;
+  border-color: var(--burgundy);
+}
+
+/* Packs spéciaux */
+.pack-card {
+  border: 2px solid var(--gold);
+  background-color: #fffdf8;
+}
+
+.pack-supreme {
+  grid-column: 1 / -1; /* Prend toute la ligne */
+  max-width: 800px;
+  width: 100%;
+  margin: 2rem auto 0 auto;
+}
+.pack-supreme .product-img {
+  height: 400px;
+}
+
+/* =========================================
+   LA BESACE (PANIER LATÉRAL)
+   ========================================= */
+.btn-cart {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--burgundy);
+  padding: 0.5rem 1rem;
+  font-family: var(--font-cinzel);
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.btn-cart:hover { background: var(--burgundy); color: #fff; }
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: -450px; /* Caché */
+  width: 100%;
+  max-width: 450px;
+  height: 100vh;
+  background-color: var(--bg-color);
+  box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  z-index: 1000;
+  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+.cart-drawer.open { right: 0; }
+
+.cart-drawer-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2rem;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+.btn-close { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted); }
+
+.cart-items { flex-grow: 1; overflow-y: auto; padding-right: 0.5rem; }
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed rgba(0,0,0,0.1);
+  padding: 1.5rem 0;
+}
+.cart-item-info h4 { margin: 0; font-family: var(--font-cinzel); font-size: 1.1rem; color: var(--burgundy); }
+
+.cart-item-price { font-size: 1.1rem; color: var(--gold); font-weight: bold; margin-top: 0.3rem; }
+
+.cart-item-controls { display: flex; align-items: center; gap: 0.5rem; }
+.qty-btn {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--burgundy);
+  cursor: pointer;
+  padding: 0.3rem 0.7rem;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.qty-btn:hover { background: var(--burgundy); color: #fff; border-color: var(--burgundy); }
+.qty-display { font-weight: bold; font-size: 1.1rem; min-width: 1.5rem; text-align: center; }
+
+.empty-cart { font-style: italic; text-align: center; color: var(--text-muted); margin-top: 2rem; }
+
+.cart-footer { border-top: 1px solid rgba(0,0,0,0.1); padding-top: 1rem; margin-top: 1rem; }
+.cart-total { display: flex; justify-content: space-between; font-family: var(--font-cinzel); font-weight: bold; font-size: 1.4rem; margin-bottom: 1.5rem; }
+
+/* Voile d'assombrissement */
+.cart-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.cart-overlay.open { opacity: 1; pointer-events: auto; }
+
+/* =========================================
+   PIED DE PAGE (FOOTER)
+   ========================================= */
+.footer { padding: 3rem 0; text-align: center; border-top: 1px solid rgba(194, 161, 101, 0.3); }
+.footer-inner { display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+.italic.small { font-style: italic; font-size: 0.9rem; color: var(--text-muted); }
+
+/* =========================================
+   RESPONSIVE DESIGN (Écrans plus petits)
+   ========================================= */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; text-align: center; }
+  .cta-row { justify-content: center; }
+  .savoir-grid { grid-template-columns: 1fr; }
+  #products-grid { grid-template-columns: repeat(2, 1fr); }
+  .visit-grid { grid-template-columns: 1fr; }
+  .nav { display: none; } /* On cache le menu sur petit écran, sauf la besace idéale */
+}
+
+@media (max-width: 600px) {
+  #products-grid { grid-template-columns: 1fr; }
+}
+
+/* =========================================
+   FOND BORDEAUX POUR LE BAS DE PAGE
+   ========================================= */
+#commande, .footer {
+  background-color: var(--burgundy);
+  color: #fff;
+}
+
+/* On change la couleur des titres et ornements pour qu'ils ressortent en doré */
+#commande .display.burgundy {
+  color: var(--gold); 
+}
+#commande .flourish.dark {
+  color: var(--gold); 
+}
+
+/* On éclaircit le texte gris pour qu'il soit lisible sur le fond sombre */
+#commande p {
+  color: #f6f1e3 !important; 
+}
+
+/* On rend les cartes transparentes avec une élégante bordure dorée */
+#commande .visit-card {
+  background: transparent;
+  border: 1px solid rgba(194, 161, 101, 0.4); 
+  color: #fff;
+}
+
+/* Ligne de séparation au-dessus des droits d'auteur */
+.footer {
+  border-top: 1px solid rgba(194, 161, 101, 0.2);
+}
+/* Remplacez ".votre-conteneur-logo" par le vrai nom de votre classe HTML */
+.votre-conteneur-logo {
+    display: flex;             /* Active le mode Flexbox */
+    align-items: center;       /* L'ingrédient secret : centre verticalement ! */
+    gap: 20px;                 /* Crée un bel espacement régulier entre le logo et le texte */
+}
+
+/* Assurez-vous aussi que le texte à l'intérieur n'a pas de marges invisibles qui le poussent vers le bas */
+.votre-conteneur-logo h1, 
+.votre-conteneur-logo span {
+    margin: 0; 
+}
