@@ -111,7 +111,7 @@ document.getElementById('checkout-btn').addEventListener('click', async () => {
 
   try {
     // Le messager part vers notre serveur Node.js local
-    const response = await fetch('http://localhost:3000/create-checkout-session', {
+    const response = await fetch('https://api-corne-abondance.onrender.com/create-checkout-session', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

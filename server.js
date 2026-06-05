@@ -24,8 +24,8 @@ app.post('/create-checkout-session', async (req, res) => {
       payment_method_types: ['card'],
       mode: 'payment',
       line_items: lineItems,
-      success_url: 'http://localhost:3000/success.html',
-      cancel_url: 'http://localhost:3000/cancel.html',
+      success_url: 'https://contactlacornedabondance-debug.github.io/la-corne-abondance-digital/success.html',
+      cancel_url: 'https://contactlacornedabondance-debug.github.io/la-corne-abondance-digital/cancel.html',
     });
 
     res.json({ url: session.url });
